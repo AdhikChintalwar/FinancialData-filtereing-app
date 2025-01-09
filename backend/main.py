@@ -5,7 +5,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["financial-data-filtereing-app.vercel.app"],  
+    allow_origins=["https://financial-data-filtereing-app.vercel.app/financial-data"],  
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
