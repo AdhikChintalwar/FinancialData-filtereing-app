@@ -2,7 +2,10 @@ from fastapi import FastAPI, Query
 import requests
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-
+import os
+API_KEY = os.getenv("API_KEY")
+if not API_KEY:
+    raise ValueError("API_KEY is not set in the environment variables.")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
@@ -12,7 +15,6 @@ app.add_middleware(
 )
 
 
-API_KEY = "x6JqrPU493FTgKR0fGMTuTKJafY9nHK2"
 API_URL = f"https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&apikey={API_KEY}"
 
 
