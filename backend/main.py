@@ -17,6 +17,9 @@ app.add_middleware(
 
 API_URL = f"https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&apikey={API_KEY}"
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Financial Data Filtering API! Backend is running.Move to '/financial-data' to get data."}
 
 @app.get("/financial-data")
 def get_financial_data(
