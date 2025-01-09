@@ -1,2 +1,7 @@
-fastapi uvicorn requests python-multipart
+fastapi 
+uvicorn 
+requests 
+fastapi[all]
+fastapi-cors
+python-multipart
  
