@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Financial Data Filtering App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based web application that fetches and displays financial data for Apple Inc. using the Financial Modeling Prep API. The app provides features like filtering and sorting the data, with a backend implemented in FastAPI for handling API requests.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetches annual income statements for Apple Inc. (AAPL).
+- Displays financial metrics such as revenue, net income, gross profit, EPS, and operating income in a table.
+- Filters data based on:
+  - Date range (years).
+  - Revenue range.
+  - Net income range.
+- Sorts data by:
+  - Date (ascending/descending).
+  - Revenue (ascending/descending).
+  - Net income (ascending/descending).
+- Fully responsive design using TailwindCSS.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, Axios, TailwindCSS
+- **Backend**: FastAPI
+- **Deployment**: Vercel (Frontend) and Render (Backend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Live Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Deployed App**: [View Live App](https://financial-data-filtereing-app.vercel.app)
+- **Backend API**: [Backend URL](https://financial-data-filtering-app-heox.onrender.com/financial-data)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation and Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js and npm installed
+- Python 3.9 or higher installed
+- Git installed
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Steps to Run the Project Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 1. Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/AdhikChintalwar/FinancialData-filtereing-app.git
+cd FinancialData-filtereing-app
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 2. For backend
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate   # For Mac/Linux
+venv\Scripts\activate      # For Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-## Learn More
+#### 3. For frontend
+```bash
+cd ../frontend
+npm install
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Add an environment variable in Render:
+API_KEY = <Your Financial Modeling Prep API Key>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
